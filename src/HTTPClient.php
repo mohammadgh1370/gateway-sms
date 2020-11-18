@@ -124,13 +124,13 @@ class HTTPClient
 
         curl_close($curl);
 
+
+        // http status code is parsable or not
+        if (!in_array($status, $this->_supportedStatusCodes)) {
+            throw new \Exception("unexpected http error occurred", $status);
+        }
         return json_decode($response,true);
 
-//        // http status code is parsable or not
-//        if (!in_array($status, $this->_supportedStatusCodes)) {
-//            throw new Errors\HttpException("unexpected http error occurred", $status);
-//        }
-//
 //        $arrayResponse = json_decode($response);
 //
 //        // marshal received response to base Response object
