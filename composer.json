@@ -1,0 +1,28 @@
+{
+    "name": "gateway/sms",
+    "description": "sms gateway",
+    "authors": [
+        {
+            "name": "Mohammad Ghorbani",
+            "email": "mohammadghorbani1992@gmail.com"
+        }
+    ],
+    "minimum-stability": "dev",
+    "prefer-stable": false,
+    "require": {
+        "guzzlehttp/guzzle": "^7",
+        "illuminate/notifications": "^8"
+    },
+    "autoload": {
+        "psr-4": {
+            "Gateway\\Sms\\": "src"
+        }
+    },
+    "extra": {
+        "laravel": {
+            "providers": [
+                "Gateway\\Sms\\SmsServiceProvider"
+            ]
+        }
+    }
+}
