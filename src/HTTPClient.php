@@ -1,6 +1,5 @@
 <?php
 
-
 namespace Gateway\Sms;
 
 class HTTPClient
@@ -117,7 +116,7 @@ class HTTPClient
         $response = curl_exec($curl);
 
         if ($response === false) {
-            throw new Errors\HttpException(curl_error($curl), curl_errno($curl));
+            throw new \Exception(curl_error($curl), curl_errno($curl));
         }
 
         // get http status
