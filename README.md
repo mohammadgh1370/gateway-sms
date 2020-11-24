@@ -57,20 +57,18 @@ composer require kavenegar/php
 In your code just use it like this.
 ```php
 # On the top of the file.
-use Tzsk\Sms\Facades\Sms;
+use Gateway\Sms\Facades\Sms;
 
 ...
 
 # In your Controller.
-Sms::send("this message", function($sms) {
-    $sms->to(['Number 1', 'Number 2']); # The numbers to send to.
-});
+Sms::content("this message")->to(['Number 1', 'Number 2'])->send();
 ```
 
 ## :heart_eyes: Channel Usage
 
 First you have to create your notification using `php artisan make:notification` command.
-then `SmsChannel::class` can be used as channel like the below:
+then `sms` can be used as channel like the below:
 
 ```php
 namespace App\Notifications;
@@ -119,7 +117,3 @@ class VerificationNotification extends Notification
     }
 }
 ```
-
-## Changelog
-
-Please see [CHANGELOG](CHANGELOG.md) for more information on what has changed recently.
