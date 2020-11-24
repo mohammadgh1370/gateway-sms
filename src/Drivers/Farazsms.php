@@ -31,6 +31,18 @@ class Farazsms implements DriverInterface
         ]);
     }
 
+    public function message(SmsMessage $message)
+    {
+        $this->message = $message;
+        return $this;
+    }
+
+    public function to($recipients)
+    {
+        $this->recipients = $recipients;
+        return $this;
+    }
+
     public function send()
     {
         $response = collect();
@@ -53,18 +65,6 @@ class Farazsms implements DriverInterface
         }
 
         return $response;
-    }
-
-    public function message(SmsMessage $message)
-    {
-        $this->message = $message;
-        return $this;
-    }
-
-    public function to($recipients)
-    {
-        $this->recipients = $recipients;
-        return $this;
     }
 
     private function payload($recipient, $is_pattern_code)
