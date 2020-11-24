@@ -9,12 +9,11 @@ return [
 
     'drivers' => [
         'farazsms' => [
-            'url'      => env('FARAZSMS_URL', 'http://rest.ippanel.com'),
-            'username' => env('FARAZSMS_USERNAME'),
-            'password' => env('FARAZSMS_PASSWORD'),
-            'from'     => env('FARAZSMS_FROM', '+983000505'),
-            'api_key'  => env('FARAZSMS_API_KEY')
+            'url'     => env('FARAZSMS_URL', 'http://rest.ippanel.com'),
+            'from'    => env('FARAZSMS_FROM'),
+            'api_key' => env('FARAZSMS_API_KEY'),
         ],
-        'log'      => [],
+
+        'log' => [],
     ],
 ];
