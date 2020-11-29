@@ -49,7 +49,7 @@ class Farazsms implements DriverInterface
 
         $url = '/v1/messages';
         $is_pattern_code = false;
-        if (!empty($this->message->getPatternCode()) && !empty($this->message->getPatternData())) {
+        if (!empty($this->message->getPatternCode())) {
             $is_pattern_code = true;
             $url = $url . '/patterns/send';
         }
