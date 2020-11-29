@@ -39,7 +39,11 @@ class Farazsms implements DriverInterface
 
     public function to($recipients)
     {
-        $this->recipients = $recipients;
+        if (is_string($recipients)) {
+            $this->recipients = [$recipients];
+        } else {
+            $this->recipients = $recipients;
+        }
         return $this;
     }
 
