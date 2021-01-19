@@ -23,7 +23,7 @@ class Log implements DriverInterface
             'message' => $this->message,
         ]);
 
-        return true;
+        return null;
     }
 
     public function message(SmsMessage $message)

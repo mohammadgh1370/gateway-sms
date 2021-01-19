@@ -33,7 +33,7 @@ class SmsChannel
         $response = $manager->to($message->getRecipients())->message($message)->send();
 
         if (method_exists($notification, 'response')) {
-            $notification->response($driver, $message->toArray(), $response->toArray());
+            $notification->response($driver, is_null($message) ? null : $message->toArray(), is_null($response) ? null : $response->toArray());
         }
 
         return $response;
